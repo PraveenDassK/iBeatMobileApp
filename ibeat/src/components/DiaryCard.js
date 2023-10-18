@@ -1,15 +1,14 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 
-const ViewMDN = ({navigation,route}) => {
-  console.log("ViewMDN",route.params)
+const DiaryCard = () => {
   return (
     <View>
-      <Text>ViewMDN</Text>
+      <Text>DiaryCard</Text>
     </View>
   );
 };
 
-export default ViewMDN;
+export default DiaryCard;
 
 const styles = StyleSheet.create({});

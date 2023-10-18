@@ -15,7 +15,7 @@ const AppNavigator = () => {
         screenOptions={{
           headerMode: "screen",
           headerTintColor: "white",
-          headerStyle: { backgroundColor: "tomato" },
+          headerStyle: { backgroundColor: "#FFFFFF" },
         }}>
         <Stack.Screen
           name='Notification'
