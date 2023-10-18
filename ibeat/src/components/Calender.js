@@ -44,8 +44,8 @@ const Calendar = () => {
   }, [selectedDate, selectedMonth, selectedYear]);
 
   return (
-    <View style={{paddingHorizontal:"5%"}}>
-      <View style={{width:"50%"}}>
+    <View style={{ paddingHorizontal: "5%", backgroundColor: "white" }}>
+      <View style={{ width: "50%" }}>
         <Picker selectedValue={selectedMonth} onValueChange={onMonthChange}>
           {months.map((month, index) => (
             <Picker.Item key={index} label={month} value={month} />
