@@ -117,7 +117,6 @@ const PatientMDN = ({ navigation }) => {
 export default PatientMDN;
 
 const RenderItem = ({ data, navigation }) => {
-  console.log(data);
   return (
     <>
       <View
@@ -125,8 +124,7 @@ const RenderItem = ({ data, navigation }) => {
           width: "100%",
           padding: "5%",
           backgroundColor: "white",
-        }}
-      >
+        }}>
         <View style={styles.eachCardContainer}>
           <View style={styles.cardRow}>
             <View>
@@ -147,11 +145,10 @@ const RenderItem = ({ data, navigation }) => {
                 style={{
                   height: 16,
                   width: 16,
-                  backgroundColor: data?.data?.isActive ? "#CC3366" : "#FFD05C",
+                  backgroundColor: data?.isActive ? "#CC3366" : "#FFD05C",
                   borderRadius: 8,
                   marginTop: "5%",
-                }}
-              ></View>
+                }}></View>
             </View>
           </View>
           <View style={styles.cardRow}>
@@ -170,12 +167,10 @@ const RenderItem = ({ data, navigation }) => {
                 display: "flex",
                 width: "50%",
                 justifyContent: "center",
-              }}
-            >
+              }}>
               <TouchableOpacity
                 style={styles.viewMdnButton}
-                onPress={() => navigation.push("ViewMDN", data)}
-              >
+                onPress={() => navigation.push("ViewMDN", data)}>
                 <Image source={require("../assets/MDNIcon.png")} />
                 <Text style={styles.buttonText}>View MDN</Text>
               </TouchableOpacity>

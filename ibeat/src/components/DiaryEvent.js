@@ -13,42 +13,49 @@ const DiaryEvent = () => {
         { issue: "Arm, neck, throat or jaw discomfort" },
       ],
       activity: "Undefined",
+      status: "active",
     },
     {
       id: 2,
-      time: "10:10 AM -10:12 AM",
+      time: "10:10 AM- 10:12 AM",
       problems: [
         { issue: "Chest discomfort" },
         { issue: "Arm, neck, throat or jaw discomfort" },
         { issue: "Shortness of breath" },
       ],
       activity: "Quiet activity",
+      status: "inactive",
     },
     {
       id: 3,
       time: "11:27 AM",
       problems: [{ issue: "Chest discomfort" }],
       activity: "None physical work(paperwork...",
+      status: "System",
     },
     {
       id: 4,
       time: "11:27 AM",
       problems: [{ issue: "Chest discomfort" }],
       activity: "None physical work(paperwork...",
+      status: "System",
     },
   ];
+
   return (
-    <ScrollView>
+    <ScrollView
+      style={{ backgroundColor: "white" }}
+      showsVerticalScrollIndicator={false}>
       <Calendar />
-      <View style={{ width: "100%",backgroundColor:"white" }}>
+      <View style={{ width: "100%", backgroundColor: "white" }}>
         {diaryData?.map((eachValue, i) => {
           return (
             <View key={i} style={styles.eachContainer}>
               <View style={{ width: "20%" }}>
-                <Text style={{ textAlign: "center" }}>{eachValue?.time}</Text>
+                <Text style={styles.timeText}>{eachValue?.time}</Text>
               </View>
               <View style={{ width: "70%" }}>
-                <DiaryCard />
+                <DiaryCard cardData={eachValue} />
               </View>
             </View>
           );
@@ -70,5 +77,11 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     width: "100%",
     marginVertical: 10,
+  },
+  timeText: {
+    textAlign: "center",
+    color: "#6B7588",
+    fontFamily: "poppins-Medium",
+    fontSize: 14,
   },
 });

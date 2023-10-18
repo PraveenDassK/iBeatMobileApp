@@ -12,18 +12,16 @@ const Notifications = ({ navigation }) => {
   return (
     <View style={styles.main}>
       <View style={{ backgroundColor: "#FFFFFF", padding: "5%", zIndex: 10 }}>
-        <Text onPress={() => navigation.push("ViewMDN")} style={styles.title}>
-          Diary
+        <Text style={styles.title}>
+          {isActive === 0 ? "Stuart , Gilbert" : "Diary"}
         </Text>
         <View style={styles.tabSelector}>
           <View style={{ width: "50%" }}>
             <TouchableOpacity
               style={isActive === 0 ? styles.activeTabButton : styles.tabButton}
-              onPress={handlePress}
-            >
+              onPress={handlePress}>
               <Text
-                style={isActive === 0 ? styles.activetabText : styles.tabText}
-              >
+                style={isActive === 0 ? styles.activetabText : styles.tabText}>
                 Patient MDN
               </Text>
             </TouchableOpacity>
@@ -31,18 +29,22 @@ const Notifications = ({ navigation }) => {
           <View style={{ width: "50%" }}>
             <TouchableOpacity
               style={isActive === 1 ? styles.activeTabButton : styles.tabButton}
-              onPress={handlePress}
-            >
+              onPress={handlePress}>
               <Text
-                style={isActive === 1 ? styles.activetabText : styles.tabText}
-              >
+                style={isActive === 1 ? styles.activetabText : styles.tabText}>
                 Diary events
               </Text>
             </TouchableOpacity>
           </View>
         </View>
       </View>
-      <View>{isActive === 0 ? <PatientMDN navigation={navigation}/> : <DiaryEvent />}</View>
+      <View>
+        {isActive === 0 ? (
+          <PatientMDN navigation={navigation} />
+        ) : (
+          <DiaryEvent />
+        )}
+      </View>
     </View>
   );
 };
@@ -52,7 +54,7 @@ export default Notifications;
 const styles = StyleSheet.create({
   main: {
     width: "100%",
-    backgroundColor:"#f5faf6",
+    backgroundColor: "#f5faf6",
   },
   title: {
     fontFamily: "poppins-bold",
